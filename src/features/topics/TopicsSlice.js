@@ -5,17 +5,20 @@ const initialState = {
 };
 
 const topicsReducer = {
-  addTopic: (state, payload) => {
+  addTopic: (state, action) => {
     return {
       ...state,
       topics: {
-        ...state.topics.topics,
-        [payload.id]: {
-          ...payload,
+        ...state.topics,
+        [action.payload.id]: {
+          // id: action.payload.id,
+          // name: action.payload.name,
+          // icon: action.payload.icon,
+          ...action.payload,
           quizIds: [],
         },
       },
-    }; // state.topics[payload.id] = payload;
+    };
   },
 };
 
