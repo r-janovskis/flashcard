@@ -6,7 +6,6 @@ const initialState = {
 
 const quizzesReducer = {
   addQuiz: (state, action) => {
-    console.log(action.payload);
     return {
       ...state,
       quizzes: {
